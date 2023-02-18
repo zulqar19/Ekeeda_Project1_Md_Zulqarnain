@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY Calci!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1> My Calci!</h1>
+    <div class="container">
+        <section class="display_box">
+            <input type="text" name="display" id="display" >
+        </section>
+            <section class="row">
+                <input class="button" type="button" id="clear" value="AC" onclick="clearScreen()">
+                <input class="button" id="special" type="button" value="C" onclick="clearOne()">
+                <input class="button" type="button" value="/" onclick="display.value += '/' ">
+                <input class="button" type="button" value="%" onclick="display.value += '%' ">
+            </section>
+            <section class="row">
+                <input class="button" type="button" value="7" onclick="display.value += '7' ">
+                <input class="button" type="button" value="8" onclick="display.value += '8' ">
+                <input class="button" type="button" value="9" onclick="display.value += '9' ">
+                <input class="button" type="button" value="X" onclick="display.value += '*' ">
+            </section>
+            <section class="row">
+                <input class="button" type="button" value="6" onclick="display.value += '6' ">
+                <input class="button" type="button" value="5" onclick="display.value += '5' ">
+                <input class="button" type="button" value="4" onclick="display.value += '4' ">
+                <input class="button" type="button" value="-" onclick="display.value += '-' ">
+            </section>
+            <section class="row">
+                <input class="button" type="button" value="3" onclick="display.value += '3' ">
+                <input class="button" type="button" value="2" onclick="display.value += '2' ">
+                <input class="button" type="button" value="1" onclick="display.value += '1' ">
+                <input class="button" type="button" value="+" onclick="display.value += '+' ">
+            </section>
+            <section class="row">
+                <input class="button" type="button" value="0" onclick="display.value += '0' ">
+                <input class="button" type="button" value="." onclick="display.value += '.' ">
+                <input class="button double" id="evals" type="button" value="=" onclick="calculate()">
+            </section>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
+

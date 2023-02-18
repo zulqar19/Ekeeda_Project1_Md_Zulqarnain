@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    font-size: 40px;
+    background-color: #2b2b2b;
+    color:rgb(244, 230, 250)
+}
+.head{
+    min-width: 100vw;
+    height: 10vh;
+    background-color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head h1{
+    color: green;
+    font-size: 60px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto 50px auto;
+}
+.cell-container{
+    display: grid;
+    grid-template-columns: repeat(3,8vw);
+    grid-template-rows: repeat(3,8vw);    
+}
+.blocks{
+    border: 2px solid green;
+    font-size: 7vw;
+    opacity: 0.5;
+}
+.blocks:hover{
+    background-color: rgb(144, 180, 210);
+    border-color: white;
+    opacity: 1; 
+}
+/* remove the hover when input is clicked */
+.disabled{
+    pointer-events: none;
+    opacity: .8;
+    border: 2px solid red;
+}
+#turn{
+    font-size: 3vw;
+}
+#btn{
+    padding: 10px;
+    border-radius: 10px;
+    width: 15vw;
+    background: green;
+    font-size: 3vw;
+    margin-top: 20px;
+    color: white;
+}
+.bl{
+    border-left: none;
+}
+.br{
+    border-right: none;
+}
+.bb{
+    border-bottom: none;
+}
+.bt{
+    border-top: none;
+}
+.ybl{
+    border-left: 2px solid red;
+}
+.ybr{
+    border-right: 2px solid red;
+}
+.ybb{
+    border-bottom: 2px solid red;
+}
+.ybt{
+    border-top: 2px solid red;
+}
