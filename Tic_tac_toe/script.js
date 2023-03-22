@@ -1,12 +1,9 @@
 // Global Variable
 let turn = "X";
 let gameOver = false;
-const winningCombination = [
-    [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]
-]
 // Selector
 let cellElements = document.querySelectorAll('.blocks');
-    cellElements.forEach(cell => {
+    cellElements.forEach((cell) => {
     cell.addEventListener('click', handleClick)
     })
 
@@ -20,7 +17,11 @@ function handleClick(e){
     checkWin();
     if (!gameOver) {
         document.getElementById('turn').innerText = "Turn for " + turn;
+    }else{
+        return;
     }
+    checkDraw();
+
 }
 
 // player change will takes place
@@ -41,20 +42,36 @@ function placeMark(cell) {
 // cellElements[e[0]] -> is the first index of the 2d Array
 // cellElements[e[1]] -> is the second index of the 2d Array 
 // cellElements[e[2]] -> is the third index of the 2d Array
+
+
+
+
 function checkWin() {
-    let draw = Array.from(cellElements).filter(
-        (item) => item.innerHTML === "").length === 0;
+   
+    const winningCombination = [
+        [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]
+    ]    
+    
     winningCombination.forEach(e =>{
         if ((cellElements[e[0]].innerText === cellElements[e[1]].innerText) && (cellElements[e[1]].innerText === cellElements[e[2]].innerText) && cellElements[e[0]].innerText !== "") {
             document.getElementById('turn').innerText = cellElements[e[0]].innerText + " Won"
             gameOver =true;
             console.log("Winner is player " + cellElements[e[0]].innerText);
-        }else if(draw){
-            document.getElementById('turn').innerText = "Game is draw"
-            gameOver = true;
+            return;
         }
     })
 }
+function checkDraw() {
+    let draw = Array.from(cellElements).filter(
+        (item) => item.innerHTML === "").length === 0;
+        if(draw){
+            console.log(draw);
+            document.getElementById('turn').innerText = "Game is draw";
+            gameOver = true;
+            // console.log(draw);
+            return;
+    }
+    }
 
 // restart
 document.getElementById('btn').addEventListener('click', restart)
